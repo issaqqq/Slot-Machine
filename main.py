@@ -110,8 +110,7 @@ def GetBet():
 
     return bet
 
-def main():
- balance = GetDeposit() 
+def game(balance):
  lines = GetNumberOfLines()
  while True:
     bet = GetBet()
@@ -128,6 +127,21 @@ def main():
  winnings, winninglines = CheckWinnings(slots, lines, bet, SymbolValue)
  print(f"You won {winnings}")
  print(f"you won on lines: ", *winninglines)
+
+ return winnings - totalBet
+
+
+
+def main():
+ balance = GetDeposit() 
+ while True:
+     print(f"Current balance is ${balance}")
+     answer = input("Press enter to play (q to quit)")
+     if answer == "q":
+         break
+     balance += game(balance)
+
+     print(f"You left with ${balance}")
 
 
 main() 
