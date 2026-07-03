@@ -1,6 +1,6 @@
 import random 
 
-MAX_LINES = 5
+MAX_LINES = 3
 MAX_BET = 1000
 MIN_Bet = 1
 
@@ -14,6 +14,28 @@ SymbolCount = {
     "D": 5
 }
 
+SymbolValue = {
+    "A": 5,
+    "B": 4,
+    "C": 3,
+    "D": 2
+}
+
+def CheckWinnings(columns, lines, bets, values):
+    winnings = 0
+    winningLines = []
+    for line in range(lines):
+        symbol = columns[0][line]
+        for column in columns:
+            SymbolCheck = column[line]
+            if symbol != SymbolCheck:
+                break
+        else:
+            winnings += values[symbol] * bets
+            winningLines.append(line + 1)
+
+    return winnings, winningLines
+    
 def GetSlotMachineSpin(rows, cols, symbols):
     allSymbols = []
     for symbol, SymbolCount in symbols.items():
@@ -103,7 +125,9 @@ def main():
  print(f"You are betting ${bet} on {lines} lines. Total bet is equal to ${totalBet}")
  slots = GetSlotMachineSpin(ROWS, COLS, SymbolCount)
  PrintSlotMachine(slots)
-
+ winnings, winninglines = CheckWinnings(slots, lines, bet, SymbolValue)
+ print(f"You won {winnings}")
+ print(f"you won on lines: ", *winninglines)
 
 
 main() 
