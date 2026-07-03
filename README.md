@@ -70,29 +70,17 @@ python main.py
 
 ---
 
-## 💎 Symbol Values
+### Rarity and Multipliers
+Symbols have inversely proportional probabilities and multipliers (rarer symbols yield higher rewards):
 
-| Symbol | Value |
-|---------|------:|
-| A | 5 |
-| B | 4 |
-| C | 3 |
-| D | 2 |
+| Symbol | Total in Pool (Frequency) | Multiplier Value |
+| :----: | :-----------------------: | :--------------: |
+|   **A** | 2 (Rarest)                | 5x               |
+|   **B** | 3                         | 4x               |
+|   **C** | 4                         | 3x               |
+|   **D** | 5 (Most Common)           | 2x               |
 
----
-
-## 🎲 Symbol Distribution
-
-The probability of each symbol appearing is controlled using the following counts:
-
-| Symbol | Count |
-|---------|------:|
-| A | 2 |
-| B | 3 |
-| C | 4 |
-| D | 5 |
-
-Symbols with higher counts appear more frequently.
+*Example Formula: `Line Winnings = Symbol Value Multiplier * Bet Per Line`*
 
 ---
 
