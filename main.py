@@ -29,7 +29,7 @@ def GetSlotMachineSpin(rows, cols, symbols):
             currentSymbols.remove(value)
             column.append(value)
 
-        column.append(column)
+        columns.append(column)
     
     return columns
 
@@ -37,9 +37,10 @@ def PrintSlotMachine(columns):
     for row in range(len(columns[0])):
         for i, column in enumerate(columns):
             if i != len(columns) - 1:
-                print(column[row], "|")
+                print(column[row], end=" | ")
             else:
-                print(column[row])
+                print(column[row], end="")
+        print()
 
 def GetDeposit():
     while True:
@@ -91,12 +92,13 @@ def main():
  balance = GetDeposit() 
  lines = GetNumberOfLines()
  while True:
-      bet = GetBet() 
-      totalBet = bet * lines
-      if totalBet > balance:
-          print(f"You do not have enought amount, your current balance is ${balance}")
-        else:
-          break
+    bet = GetBet()
+    totalBet = bet * lines
+
+    if totalBet > balance:
+        print(f"You do not have enough amount, your current balance is ${balance}")
+    else:
+        break
       
  print(f"You are betting ${bet} on {lines} lines. Total bet is equal to ${totalBet}")
  slots = GetSlotMachineSpin(ROWS, COLS, SymbolCount)
