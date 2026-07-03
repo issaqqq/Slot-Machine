@@ -70,7 +70,7 @@ python main.py
 
 ---
 
-### Rarity and Multipliers
+### ▶️ Rarity and Multipliers
 Symbols have inversely proportional probabilities and multipliers (rarer symbols yield higher rewards):
 
 | Symbol | Total in Pool (Frequency) | Multiplier Value |
