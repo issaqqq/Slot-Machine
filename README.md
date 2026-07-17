@@ -5,7 +5,7 @@ A simple command-line Slot Machine game built with Python. Players can deposit m
 This project demonstrates Python fundamentals including functions, loops, dictionaries, lists, randomization, and user input validation.
 
 ---
-
+ 
 ## 📌 Features
 
 - 💰 Deposit virtual money before playing
